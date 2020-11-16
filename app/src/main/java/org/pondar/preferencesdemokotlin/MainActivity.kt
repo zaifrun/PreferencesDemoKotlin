@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //read the values at app startup so we can show this in the UI
-        val male = MyPreferenceFragment.isMale(this)
-        val name = MyPreferenceFragment.getName(this)
-        val notifications = MyPreferenceFragment.useNotifications(this)
+        val male = PreferenceHandler.isMale(this)
+        val name = PreferenceHandler.getName(this)
+        val notifications = PreferenceHandler.useNotifications(this)
         updateUI(name, male,notifications)
 
     }
@@ -45,9 +45,9 @@ class MainActivity : AppCompatActivity() {
         //the code means we came back from settings
         {
             //I can can these methods like this, because they are static
-            val male = MyPreferenceFragment.isMale(this)
-            val name = MyPreferenceFragment.getName(this)
-            val notifications = MyPreferenceFragment.useNotifications(this)
+            val male = PreferenceHandler.isMale(this)
+            val name = PreferenceHandler.getName(this)
+            val notifications = PreferenceHandler.useNotifications(this)
             val message = "Welcome, $name, You are male? $male"
             val toast = Toast.makeText(this, message, Toast.LENGTH_LONG)
             toast.show()
