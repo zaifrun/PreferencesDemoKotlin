@@ -12,9 +12,9 @@ object PreferenceHandler {
     fun useNotifications(context: Context) : Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(SETTINGS_NOTIFICATONS,true)
     }
-    //note these are static methods - meaning they always exists
+    //note these are "static" methods - meaning they always exists
     //so we do not have to create an instance of this class to
-    //get the values.
+    //get the values - the Singleton pattern again!
     fun isMale(context: Context): Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(SETTINGS_GENDERKEY, true)
     }
